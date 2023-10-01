@@ -68,3 +68,11 @@ button {
 button:hover {
     background-color: #797979;
 }
+
+.texto{
+    text-align: center;
+}
+
+.texto p{
+    padding: 10px;
+}

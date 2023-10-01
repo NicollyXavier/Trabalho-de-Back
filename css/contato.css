@@ -2,6 +2,7 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0  ;
+
 }
 body {
     font-family: Arial, sans-serif;
@@ -45,4 +46,14 @@ a:hover{
     font-size: 15px;
     background-color: #333;
     color: #ffffff;
+    cursor: pointer;
 }
+
+h1{
+    text-align: center
+}
+
+.mapa{
+    text-align: center;
+}
+
