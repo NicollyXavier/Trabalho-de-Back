@@ -17,3 +17,5 @@
 
 ## :dart: Status do projeto
 * Em Processo de criação
+* Deploy (Vercel)
+* Implementação Google Maps API JS
