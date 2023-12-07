@@ -10,16 +10,28 @@ body {
     
 }
 header{
-    display: flex;
-    justify-content: center;
+    background-color: #404040; /* Cor de fundo do cabeçalho */
+    padding: 15px;
+    text-align: center;
 }
+.nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: #fff; /* Cor do texto dos links no cabeçalho */
+    text-decoration: none;
+    border-radius: 20px; /* Cantos arredondados */
+    background-color: #727272; /* Cor de fundo dos links no cabeçalho */
+    transition: background-color 0.3s ease; /* Efeito de transição de cor ao passar o mouse */
+}
+
 a{
     margin: 20px;
     font-size: 16px;
     font-family: Arial, sans-serif;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: #727272;
 }
 a:hover{
     color: #727272; 
@@ -28,6 +40,8 @@ a:hover{
 h1 {
     text-align: center;
     margin-top: 30px;
+    padding: 20px;
+    color:white;
 }
 
 table {
@@ -49,7 +63,7 @@ th {
     background-color: #333;
     padding: 8px;
     text-align: center;
-    color: #fff; 
+    color: #ffffff; 
 }
 tr:nth-child(even) {
     background-color: #ffffff;
@@ -69,10 +83,22 @@ button:hover {
     background-color: #797979;
 }
 
-.texto{
+.texto {
     text-align: center;
+    padding: 10px 50px;
+    margin: 0 25px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-bottom: 10px; /* Adicione esta linha para dar um espaçamento entre os elementos .texto */
 }
-
 .texto p{
-    padding: 10px;
+    text-align: center;
+    padding: 20px 50px;
+    margin: 0 20px;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 20px;
+    background-color: #727272;
+    margin-bottom: 10px; /* Adicione esta linha para dar um espaçamento entre os elementos .texto */
 }
