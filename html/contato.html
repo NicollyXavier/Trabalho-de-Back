@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contato</title>
     <link rel="stylesheet" type="text/css" href="/css/contato.css">
 </head>
 <body>
-    <header>
-        <a href="/index.html">Sorteador</a>
-        <a href="/html/sobre.html">Sobre</a>
-        <a href="/html/contato.html">Contato</a>
-    </header>
+<header>
+    <a href="/index.html">Sorteador</a>
+    <a href="/html/sobre.html">Sobre</a>
+    <a href="/html/contato.html">Contato</a>
+</header>
     <h1 style="padding-top: 10px;">Contatos</h1>
     <div class="button">
         <button class="botao" onclick="window.open('https://github.com/daniiiiella', '_blank')">Daniella Morais<img src="/imgs/github.png"  width="33px" height="33px"></button>
@@ -19,11 +19,48 @@
         <button class="botao" onclick="window.open('https://github.com/IagoPiresAlmeida', '_blank')">Iago Pires<img src="/imgs/github.png"  width="33px" height="33px"></button>
         <button class="botao" onclick="window.open('https://github.com/NicollyXavier', '_blank')">Nicolly Xavier<img src="/imgs/github.png"  width="33px" height="33px"></button>
     </div>
-    <h1 style="padding: 20px;">Localização</h1>
 
-    <div class="mapa">
-        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1975.2356061301425!2d-34.903850261411634!3d-8.053321547993523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18e1236c4cc5%3A0xcf30335f63037230!2sUNINASSAU%20Gra%C3%A7as%20-%20Bloco%20A!5e0!3m2!1spt-BR!2sbr!4v1696116282650!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
-        <p>R. Guilherme Pinto, 114 - Graças, Recife - PE, 52011-210</p>
+    <h1 style="padding: 50px;">Localização</h1>
+
+<div id="map">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHw12mbIJMLzOMAIUvNaRNI6wmxmvHYDw&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: { lat: -8.051472296171957, lng: -34.903259618389924 }, 
+                zoom: 15, 
+                };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: { lat: -8.051472296171957, lng: -34.903259618389924 },
+                map: map,
+                title: 'UNINASSAU Graças - Bloco A'    
+                });
+            
+            var contentString = '<div id="content">' +
+            '<h3 id="firstHeading" class="firstHeading">Localização</h3>' +
+            '<p>R. Guilherme Pinto, 114 - Graças, Recife - PE, 52011-210</p>' +
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+        window.openDirections = function() {
+            var directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' +
+                                encodeURIComponent('UNINASSAU Graças - Bloco A, Recife, PE');
+            window.open(directionsUrl, '_blank');
+        };
+    
+    }
+        </script>
     </div>
+
+<button class="rota" onclick="openDirections()">Obter Direções</button>
+
 </body>
 </html>
