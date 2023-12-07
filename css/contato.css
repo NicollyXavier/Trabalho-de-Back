@@ -1,75 +1,66 @@
-*{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0  ;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" type="text/css" href="/css/contato.css">
+</head>
+<body>
+<header>
+    <a href="/html/index.html" class="nav-link">Sorteador</a>
+    <a href="/html/sobre.html" class="nav-link">Sobre</a>
+    <a href="/html/contato.html" class="nav-link">Contato</a>
+</header>
+    <h1 style="padding-top: 10px;">Contatos</h1>
+    <div class="button">
+        <button class="botao" onclick="window.open('https://github.com/daniiiiella', '_blank')">Daniella Morais<img src="/imgs/github.png"  width="33px" height="33px"></button>
+        <button class="botao" onclick="window.open('https://github.com/EmanuelVictor3', '_blank')">Emanuel Victor<img src="/imgs/github.png"  width="33px" height="33px"></button>
+        <button class="botao" onclick="window.open('https://github.com/IagoPiresAlmeida', '_blank')">Iago Pires<img src="/imgs/github.png"  width="33px" height="33px"></button>
+        <button class="botao" onclick="window.open('https://github.com/NicollyXavier', '_blank')">Nicolly Xavier<img src="/imgs/github.png"  width="33px" height="33px"></button>
+    </div>
 
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #5555558e;
-    user-select: none;
+    <h1 style="padding: 45px;">Localização</h1>
+
+<div id="map">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHw12mbIJMLzOMAIUvNaRNI6wmxmvHYDw&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: { lat: -8.051472296171957, lng: -34.903259618389924 }, 
+                zoom: 15, 
+                };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: { lat: -8.051472296171957, lng: -34.903259618389924 },
+                map: map,
+                title: 'UNINASSAU Graças - Bloco A'    
+                });
+            
+            var contentString = '<div id="content">' +
+            '<h3 id="firstHeading" class="firstHeading">Localização</h3>' +
+            '<p>R. Guilherme Pinto, 114 - Graças, Recife - PE, 52011-210</p>' +
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+        window.openDirections = function() {
+            var directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' +
+                                encodeURIComponent('UNINASSAU Graças - Bloco A, Recife, PE');
+            window.open(directionsUrl, '_blank');
+        };
     
-}
-header{
-    display: flex;
-    justify-content: center;
-}
-a{
-    margin: 20px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-}
-a:hover{
-    color: #727272; 
-}
-.button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-}
+    }
+        </script>
+    </div>
 
-.botao {
-    display: flex;
-    align-items: center;
-    background-color: #678ae9;
-    width: 250px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    border-radius: 5px;
-    border:none;
-    font-size: 15px;
-    background-color: #333;
-    color: #ffffff;
-    cursor: pointer;
-}
+<button class="rota" onclick="openDirections()">Obter Direções</button>
 
-h1{
-    text-align: center
-}
-
-#map {
-    margin: 0 auto;
-    height: 400px;
-    width: 600px;
-}
-.rota{
-    display: flex;
-    align-items: center;
-    background-color: #4285f4;
-    width: 150px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 5px;
-    border:none;
-    font-size: 15px;
-    color: #ffffff;
-    cursor: pointer;
-}
+</body>
+</html>
