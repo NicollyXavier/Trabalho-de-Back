@@ -101,7 +101,18 @@ button:hover {
     text-decoration:none;
     border-radius: 20px;
     background-color: #727272;
-    margin-bottom: 10px; /* Adicione esta linha para dar um espaçamento entre os elementos .texto */
+    margin-bottom: 10px; 
+}
+
+.texto1{
+    text-align: center;
+    padding: 20px 50px;
+    margin: 0 20px;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 20px;
+    background-color: #727272;
+    margin-bottom: 10px; 
 }
 
 @media (max-width: 640px) {
